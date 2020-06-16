@@ -11,6 +11,7 @@ from .common import (
     REGISTRIES_PRE_1_8_URL,
     REGISTRIES_URL,
     SYSTEM_INFO_URL,
+    VERSION_1_5,
     VERSION_1_8,
     VOLUME_INFO_URL,
 )
@@ -60,6 +61,10 @@ class HarborAPI(object):
         version_str = systeminfo['harbor_version'].split('-')[0].lstrip('v').split('.')[:3]
         self.harbor_version = [int(s) for s in version_str]
         self.with_chartrepo = systeminfo.get('with_chartmuseum', False)
+
+    def read_only_status(self):
+        systeminfo = self._make_get_request(SYSTEM_INFO_URL)
+        return systeminfo.get('read_only', None)
 
     def _make_paginated_get_request(self, url):
         http_params = {'page_size': 100}
