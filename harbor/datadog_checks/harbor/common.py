@@ -1,18 +1,18 @@
 # (C) Datadog, Inc. 2019-present
 # All rights reserved
 # Licensed under a 3-clause BSD style license (see LICENSE)
-SYSTEM_INFO_URL = "{base_url}/api/systeminfo/"
+SYSTEM_INFO_URL = "{base_url}/{api_path}/systeminfo/"
 LOGIN_URL = "{base_url}/c/login/"
 LOGIN_PRE_1_7_URL = "{base_url}/login/"
-HEALTH_URL = "{base_url}/api/health/"
-PING_URL = "{base_url}/api/ping/"
-CHARTREPO_HEALTH_URL = "{base_url}/api/chartrepo/health"
-PROJECTS_URL = "{base_url}/api/projects/"
-REGISTRIES_URL = "{base_url}/api/registries/"
+HEALTH_URL = "{base_url}/{api_path}/health/"
+PING_URL = "{base_url}/{api_path}/ping/"
+CHARTREPO_HEALTH_URL = "{base_url}/{api_path}/chartrepo/health"
+PROJECTS_URL = "{base_url}/{api_path}/projects/"
+REGISTRIES_URL = "{base_url}/{api_path}/registries/"
 REGISTRIES_PRE_1_8_URL = "{base_url}/api/targets/"
-REGISTRIES_PING_URL = "{base_url}/api/registries/ping/"
+REGISTRIES_PING_URL = "{base_url}/{api_path}/registries/ping/"
 REGISTRIES_PING_PRE_1_8_URL = "{base_url}/api/targets/ping/"
-VOLUME_INFO_URL = "{base_url}/api/systeminfo/volumes/"
+VOLUME_INFO_URL = "{base_url}/{api_path}/systeminfo/volumes/"
 
 VERSION_1_5 = [1, 5, 0]
 VERSION_1_7 = [1, 7, 0]

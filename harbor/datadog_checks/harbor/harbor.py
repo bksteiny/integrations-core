@@ -104,9 +104,10 @@ class HarborCheck(AgentCheck):
 
     def check(self, instance):
         harbor_url = instance["url"]
+        api_ver = instance.get('api_version')
         tags = instance.get("tags", [])
         try:
-            api = HarborAPI(harbor_url, self.http)
+            api = HarborAPI(harbor_url, api_ver, self.http)
             self._check_health(api, tags)
             self._check_registries_health(api, tags)
             self._submit_project_metrics(api, tags)
